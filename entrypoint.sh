@@ -31,14 +31,14 @@ readonly ENV_VAR_NFS_PORT_MOUNTD='NFS_PORT_MOUNTD'
 readonly ENV_VAR_NFS_PORT='NFS_PORT'
 readonly ENV_VAR_NFS_PORT_STATD_IN='NFS_PORT_STATD_IN'
 readonly ENV_VAR_NFS_PORT_STATD_OUT='NFS_PORT_STATD_OUT'
-readonly ENV_VAR_NFS_VERSION='NFS_VERSION'
+readonly ENV_VAR_NFS_='NFS_'
 readonly ENV_VAR_NFS_LOG_LEVEL='NFS_LOG_LEVEL'
 
 readonly DEFAULT_NFS_PORT=2049
 readonly DEFAULT_NFS_PORT_MOUNTD=32767
 readonly DEFAULT_NFS_PORT_STATD_IN=32765
 readonly DEFAULT_NFS_PORT_STATD_OUT=32766
-readonly DEFAULT_NFS_VERSION='4.2'
+readonly DEFAULT_NFS_='4.2'
 
 readonly PATH_BIN_EXPORTFS='/usr/sbin/exportfs'
 readonly PATH_BIN_IDMAPD='/usr/sbin/rpc.idmapd'
@@ -69,7 +69,7 @@ readonly STATE_NFSD_PORT='nfsd_port'
 readonly STATE_MOUNTD_PORT='mountd_port'
 readonly STATE_STATD_PORT_IN='statd_port_in'
 readonly STATE_STATD_PORT_OUT='statd_port_out'
-readonly STATE_NFS_VERSION='nfs_version'
+readonly STATE_NFS_='nfs_version'
 
 # "state" is our only global variable, which is an associative array of normalized data
 declare -A state
@@ -530,7 +530,7 @@ boot_helper_mount() {
 boot_helper_get_version_flags() {
 
   local -r requested_version="${state[$STATE_NFS_VERSION]}"
-  local flags=('--nfs-version' "$requested_version" '--no-nfs-version' 2)
+  local flags=('--nfs-version' "$requested_version")
 
   if ! is_nfs3_enabled; then
     flags+=('--no-nfs-version' 3)
