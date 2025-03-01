@@ -1,6 +1,4 @@
-ARG BUILD_FROM=alpine:latest
-
-FROM $BUILD_FROM
+FROM alpine:3.21.3
 
 # provide a default directory to mount to
 # http://wiki.linux-nfs.org/wiki/index.php/Nfsv4_configuration
