@@ -1,12 +1,13 @@
-# erichough/nfs-server
+# jonathanbout/docker-nfs-server
 
-A lightweight, robust, flexible, and containerized NFS server.
+A lightweight, robust, flexible, and containerized NFS server, available in ARM64
 
 ## Why?
 
 This is the only containerized NFS server that offers **all** of the following features:
 
 - small (~15MB) Alpine Linux image
+- ARM64 image
 - NFS versions 3, 4, or both simultaneously
 - clean teardown of services upon termination (no lingering `nfsd` processes on Docker host)
 - flexible construction of `/etc/exports`
